@@ -8,82 +8,6 @@ const fetchBasic = async (endPoint) => {
     return jsonPokemon;
 }
 
-// Definindo em um array os tipos e cores para cada tipo
-// Obs: Poderia ter puxado direto da API, porém, isso acabou deixando o site muito lento e demorando para carregar os pokemons
-const coresType = [
-    {
-        slug: 'normal',
-        cor: 'white'
-    },
-    {
-        slug: 'fire',
-        cor: 'red'
-    },
-    {
-        slug: 'water',
-        cor: 'blue'
-    },
-    {
-        slug: 'grass',
-        cor: 'green'
-    },
-    {
-        slug: 'flying',
-        cor: 'skyblue'
-    },
-    {
-        slug: 'fighting',
-        cor: 'gray'
-    },
-    {
-        slug: 'poison',
-        cor: 'purple'
-    },
-    {
-        slug: 'electric',
-        cor: 'yellow'
-    },
-    {
-        slug: 'ground',
-        cor: 'saddlebrown'
-    },
-    {
-        slug: 'rock',
-        cor: '#ccc'
-    },
-    {
-        slug: 'psychic',
-        cor: 'pink'
-    },
-    {
-        slug: 'ice',
-        cor: 'rgb(62, 174, 214)'
-    },
-    {
-        slug: 'bug',
-        cor: 'greenyellow'
-    },
-    {
-        slug: 'ghost',
-        cor: 'ghostwhite'
-    },
-    {
-        slug: 'steel',
-        cor: 'steelblue'
-    },
-    {
-        slug: 'dragon',
-        cor: 'orangered'
-    },
-    {
-        slug: 'dark',
-        cor: 'black'
-    },
-    {
-        slug: 'fairy',
-        cor: 'aquamarine'
-    }
-]
 
 // Nessa function, estou criando elementos para atribuir os valores e imgs de cada pokemon
 const createDivPoke = async (pokeList, sectionPokemon) => {
@@ -123,11 +47,6 @@ const createDivPoke = async (pokeList, sectionPokemon) => {
     // Adicionando os textos
     spanId.innerHTML = pokeList['id'];
     if(pokeList['sprites']['front_default'] != null) {
-        coresType.forEach(type => {
-            if(type['slug'] == pokeList['types'][0]['type']['name']) {
-                divImg.style.background = type['cor'];
-            }
-        })
         img.src = pokeList['sprites']['front_default'];
     } else {
         img.innerHTML = 'Não existe imagem';

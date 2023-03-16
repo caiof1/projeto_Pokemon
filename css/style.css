@@ -30,6 +30,7 @@ main {
     margin: 10px;
     border-radius: 10px;
     position: relative;
+    background: radial-gradient(white, #3b5ba7);
 }
 .img__pokemon {
     height: 220px;
